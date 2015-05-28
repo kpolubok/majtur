@@ -1,0 +1,14 @@
+<ion-view view-title="{{ description }}">
+	<ion-nav-buttons side="primary">
+		<button class="button button-clear icon ion-loop" ng-click="refresh(true)"></button>
+	</ion-nav-buttons>
+  <ion-content>
+    <ion-list>
+		<ion-item class="item-icon-right" ng-repeat="travel in travels" href="#/tab/{{mode}}/travels/{{travel.id}}">
+			<h2>{{travel.name}}</h2>
+			<i class="icon ion-chevron-right icon-accessory"></i>
+			<p>{{travel.description}}</p>
+		</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

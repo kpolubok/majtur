@@ -1,0 +1,25 @@
+<ion-view view-title="Dodaj wpis do {{step.name}}">
+	<ion-content class="padding">
+		<div>{{message}}</div>
+		<div class="list">
+			<label class="item item-input">
+			<input type="text" placeholder="Tytuł" ng-model="post.subject" required>
+			</label>
+			<label class="item item-input">
+			<textarea placeholder="Treść" rows="5" ng-model="post.body" required></textarea>
+			</label>
+			<div class="item">				
+				<div>
+					<button ng-click="getPhoto()" class="button button-light icon ion-image"> Dodaj zdjęcie</button>
+				</div>
+				<div>
+					<img id="image-preview" style="display:block;max-width: 100%">
+				</div>
+				<div>{{lastPhoto}}</div>
+			</div>
+			<div class="padding">
+				<button ng-click="save()" class="button button-block button-light icon ion-ios-plus-outline"> Dodaj</button>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

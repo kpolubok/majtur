@@ -1,0 +1,10 @@
+<ion-view view-title="{{description}}">
+  <ion-content>	
+	<ion-list>		
+		<ion-item class="item-icon-right" style="padding-right: 0px;" ng-repeat="step in travel.steps" href="#/tab/{{mode}}/travels/{{travel.id}}/{{step.id}}">
+			<h2>{{step.name}}</h2>	
+			<i class="icon ion-chevron-right icon-accessory"></i><span></span>
+		</ion-item>
+	</ion-list>
+  </ion-content>
+</ion-view>

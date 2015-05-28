@@ -1,0 +1,15 @@
+<ion-view view-title="Mapa" hide-back-button="true">
+	<ion-nav-buttons side="primary">
+		<button class="button button-clear icon ion-ios-gear" ng-click="clickTest()"></button>
+		<a href="#/tab" class="button button-clear icon ion-close"></a>
+	</ion-nav-buttons>
+	<ion-content scroll="false">
+		<div class="scroll">
+			<map on-create="mapCreated(map)"></map>
+		</div>
+	</ion-content>
+	<ion-footer-bar class="bar-stable">
+		<a ng-click="centerOnMe()" class="button button-icon icon ion-navigate">centruj</a>
+		<a ng-click="calcRoute()" class="button button-icon icon ion-navigate">trasa</a>
+	</ion-footer-bar>
+</ion-view>

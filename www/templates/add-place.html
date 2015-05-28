@@ -1,0 +1,37 @@
+<ion-view view-title="Dodaj miejsce">
+	<ion-content class="padding">
+		<div style="height:50%;">
+			<map on-create="mapCreated(map)"></map>
+		</div>
+		<div class="list">
+			<label class="item item-input item-select">
+				<div class="input-label">
+					Rodzaj
+				</div>
+				<select ng-model="place.type">
+					<option value="4">Kawiarnia</option>
+					<option value="5">Restauracja</option>
+					<option value="6">Inne</option>
+				</select>
+			</label>
+			<label class="item item-input">
+			<input ng-model="place.name" type="text" placeholder="Nazwa">
+			</label>
+			<label class="item item-input">
+			<textarea ng-model="place.description" placeholder="Opis"></textarea>
+			</label>
+			<div class="item">
+				<div>
+					<button ng-click="getPhoto()" class="button button-light icon ion-image"> Dodaj zdjęcie</button>
+				</div>
+				<div>
+					<img id="image-preview" style="display:block;max-width: 100%">
+				</div>
+				<div>{{lastPhoto}}</div>
+			</div>
+			<div class="padding">
+				<button ng-click="save()" class="button button-block button-light icon ion-ios-plus-outline"> Dodaj</button>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

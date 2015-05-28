@@ -1,0 +1,39 @@
+<ion-view view-title="{{step.name}}">
+	<ion-content>
+		<div class="list">
+			<a class="item item-icon-left item-icon-right" href="#/tab/note/travels/{{travelId}}/{{stepId}}">
+			<i class="icon ion-compose"></i>
+			Wpis do podróży
+			<i class="icon ion-chevron-right icon-accessory"></i>
+			</a>
+			<a class="item item-icon-left item-icon-right" href="#/tab/photo/travels/{{travelId}}/{{stepId}}">
+			<i class="icon ion-image"></i>
+			Zdjęcie do podróży
+			<i class="icon ion-chevron-right icon-accessory"></i>
+			</a>
+			<a class="item item-icon-left item-icon-right" href="#/navigate/{{travelId}}/{{stepId}}">
+			<i class="icon ion-compass"></i>
+			Nawiguj
+			<i class="icon ion-chevron-right icon-accessory"></i>
+			</a>
+		</div>
+		<ion-header-bar class="bar-positive" style="position:relative;">
+			<div class="buttons">
+				<button class="button button-icon icon ion-ios-minus-outline" ng-click="data.showDelete = !data.showDelete; data.showReorder = false"></button>
+			</div>
+			<h1 class="title">Miejsca</h1>
+			<div class="buttons">
+				<button class="button" ng-click="data.showDelete = false; data.showReorder = !data.showReorder">Kolejność</button>
+			</div>
+		</ion-header-bar>				
+		<ion-list show-delete="data.showDelete" show-reorder="data.showReorder" >			
+			<ion-item class="item-icon-right" style="padding-right: 0px;" ng-repeat="place in step.places" href="#">
+				<ion-delete-button class="ion-minus-circled" ng-click="step.places.splice($index, 1)"></ion-delete-button>
+				<h2>{{place.name}}</h2>
+				<span>lon : {{place.lon}}</span>
+				<span>lat : {{place.lat}}</span>
+				<ion-reorder-button class="ion-navicon" on-reorder="moveItem(item, $fromIndex, $toIndex)"></ion-reorder-button>
+			</ion-item>
+		</ion-list>		
+	</ion-content>
+</ion-view>
