@@ -108,10 +108,11 @@ angular.module('starter.services', [])
 				return q.promise;
 			}
 		}
-		//console.log('web  travels');
+		console.log('web  travels');
 			
 			$http.get(ApiEndpoint.url+'travels/'+encodeURIComponent(token))
-				.success(function(data) {   
+				.success(function(data) {  
+console.log(data);				
 					travels = data.data;
 					q.resolve(data);
 				})
@@ -160,7 +161,7 @@ angular.module('starter.services', [])
 	getStep: function(travelId,stepId) {
       for (var i = 0; i < travels.length; i++) {
         if (travels[i].id === parseInt(travelId)) {
-			for (var j = 0; i < travels[i].steps.length; j++) {
+			for (var j = 0; j < travels[i].steps.length; j++) {
 				if (travels[i].steps[j].id === parseInt(stepId)) {
 					return travels[i].steps[j];
 				}
@@ -175,8 +176,8 @@ angular.module('starter.services', [])
   // Might use a resource here that returns a JSON array
 
   // Some fake testing data
-  var chats = [{
-    id: 0,
+  var chats = [];
+    /*id: 0,
     name: 'Browar tyski',
     lastText: 'W czasie zwiedzania mozna napić się piwa',
     face: 'http://mw2.google.com/mw-panoramio/photos/thumbnail/33949067.jpg'
@@ -190,7 +191,7 @@ angular.module('starter.services', [])
     name: 'Kościół MArii Magdaleny',
     lastText: 'Najstarszy tyski kosciół. W środku piekne witraże i rzeźby z okresu baroko-rokoko',
     face: 'http://mw2.google.com/mw-panoramio/photos/thumbnail/58394961.jpg'
-  }];
+  }];*/
 
   return {
 	add:function(name,description,image) {

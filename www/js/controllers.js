@@ -177,6 +177,7 @@ angular.module('starter.controllers', [])
 	$scope.travelId = $stateParams.travelId;
 	$scope.stepId = $stateParams.stepId;
 	$scope.step = Travels.getStep($stateParams.travelId,$stateParams.stepId);
+	console.log($scope.step);
 	$scope.mode = 'show';
 })
 
@@ -289,6 +290,7 @@ angular.module('starter.controllers', [])
 	
 .controller('MapCtrl2', function($scope, $ionicLoading,$stateParams, Travels) {
 	var _this = this;
+	_this.initialized = false;
 	$scope.travelId = $stateParams.travelId;
 	$scope.stepId = $stateParams.stepId;
 	
@@ -299,6 +301,12 @@ angular.module('starter.controllers', [])
 		_this.directionsDisplay.setMap($scope.map);
 		$scope.initRoute();
 	};
+	
+	$scope.$on('$ionicView.afterEnter', function(){
+		if(_this.initialized) {
+			$scope.calcRoute();
+		}
+	});
 	
 	$scope.initRoute = function() {
 		if (!$scope.map) {
@@ -316,6 +324,7 @@ angular.module('starter.controllers', [])
 			$scope.map.setCenter(_this.currPosition);
 			$scope.calcRoute();
 			$ionicLoading.hide();
+			_this.initialized = true;
 		}, function(error) {
 			alert('Ustalenie lokalizacji niemożliwe : ' + error.message);
 		});
@@ -346,7 +355,7 @@ angular.module('starter.controllers', [])
 	
 	$scope.calcRoute = function() {
 		//$scope.centerOnMe().then(console.log('CENTERED'));	
-//console.log('currPosition'+_this.currPosition);
+console.log('calcRoute');
 		if (!_this.currPosition) { 
 			return;
 		};		
@@ -440,6 +449,7 @@ angular.module('starter.controllers', [])
 .controller('TravelDetailCtrl', function($scope, $stateParams, Travels) {
 	$scope.travel = Travels.get($stateParams.travelId);
 	$scope.description = $scope.travel.name;
+	console.log($scope.travel);
 	$scope.mode = 'show';
 })
 /*** LIST CONTROLLERS ***/

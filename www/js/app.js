@@ -7,8 +7,8 @@
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'starter.directives', 'ngCordova', 'ionic.utils'])
 
 .constant('ApiEndpoint', {
-  url: 'http://majtur.pl/api/'
-  //url: 'http://localhost/app_dev.php/api/'
+  //url: 'http://majtur.pl/api/'
+  url: 'http://localhost/app_dev.php/api/'
 })
 
 .run(function($rootScope, $location, $ionicPlatform,$localstorage) {
