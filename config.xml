@@ -13,7 +13,6 @@
   <allow-navigation href="*"/>
   <gap:plugin name="org.apache.cordova.camera" version="0.3.2"/>
   <gap:plugin name="org.apache.cordova.geolocation" version="0.3.10"/>
-  <icon src="resources\icon.png"/>
   <preference name="webviewbounce" value="false"/>
   <preference name="UIWebViewBounce" value="false"/>
   <preference name="DisallowOverscroll" value="true"/>
@@ -63,4 +62,5 @@
     <splash src="resources\ios\splash\Default@2x~iphone.png" width="640" height="960"/>
     <splash src="resources\ios\splash\Default~iphone.png" width="320" height="480"/>
   </platform>
+  <icon src="resources\android\icon\drawable-xhdpi-icon.png"/>
 </widget>
