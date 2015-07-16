@@ -13,6 +13,8 @@
   <allow-navigation href="*"/>
   <gap:plugin name="org.apache.cordova.camera" version="0.3.2"/>
   <gap:plugin name="org.apache.cordova.geolocation" version="0.3.10"/>
+  <icon src="resources/icon.png" gap:platform="android" gap:density="mdpi" />
+  <icon src="resources/icon.png" gap:platform="android" gap:density="hdpi" />
   <preference name="webviewbounce" value="false"/>
   <preference name="UIWebViewBounce" value="false"/>
   <preference name="DisallowOverscroll" value="true"/>
