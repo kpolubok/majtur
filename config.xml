@@ -13,10 +13,10 @@
   <allow-navigation href="*"/>
   <gap:plugin name="org.apache.cordova.camera" version="0.3.2"/>
   <gap:plugin name="org.apache.cordova.geolocation" version="0.3.10"/>
+  <icon src="resources\android\icon\drawable-xhdpi-icon.png" gap:platform="android" gap:density="xhdpi"/>
   <icon src="resources\android\icon\drawable-ldpi-icon.png" gap:platform="android" gap:density="ldpi"/>
   <icon src="resources\android\icon\drawable-mdpi-icon.png" gap:platform="android" gap:density="mdpi"/>
   <icon src="resources\android\icon\drawable-hdpi-icon.png" gap:platform="android" gap:density="hdpi"/>
-  <icon src="resources\android\icon\drawable-xhdpi-icon.png" gap:platform="android" gap:density="xhdpi"/>
   <icon src="resources\android\icon\drawable-xxhdpi-icon.png" gap:platform="android" gap:density="xxhdpi"/>
   <icon src="resources\android\icon\drawable-xxxhdpi-icon.png" gap:platform="android" gap:density="xxxhdpi"/>
   <splash src="resources\android\splash\drawable-land-ldpi-screen.png" gap:platform="android" gap:density="land-ldpi"/>
